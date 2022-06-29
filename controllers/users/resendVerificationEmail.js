@@ -18,7 +18,7 @@ const resendVerificationEmail = async (req, res) => {
     to: email,
     subject: "Email verification",
     text: "Please, verify your email",
-    html: `<h3>Please, <a target="_blank" href="http://localhost:3001/api/users/verify/${user.verificationToken}">verify</a> your email</h3>`,
+    html: `<h3>Please, <a target="_blank" href="http://my-first-socketio-chat-backend.herokuapp.com/api/users/verify/${user.verificationToken}">verify</a> your email</h3>`,
   };
 
   await sendEmail(msg);

@@ -1,8 +1,6 @@
 const { User } = require("../../models");
 const { Conflict } = require("http-errors");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const { SECRET_KEY } = process.env;
 const gravatar = require("gravatar");
 const { sendEmail } = require("../../helpers");
 const { v4 } = require("uuid");
@@ -31,7 +29,7 @@ const register = async (req, res) => {
     to: email,
     subject: "Email verification",
     text: "Please, verify your email",
-    html: `<h3>Please, <a target="_blank" href="http://localhost:3001/api/users/verify/${verificationToken}">verify</a> your email</h3>`,
+    html: `<h3>Please, <a target="_blank" href="http://my-first-socketio-chat-backend.herokuapp.com/api/users/verify/${verificationToken}">verify</a> your email</h3>`,
   };
 
   await sendEmail(msg);
