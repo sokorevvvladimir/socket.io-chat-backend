@@ -38,7 +38,7 @@ const userSchema = new Schema(
 );
 
 const joiRegisterSchema = Joi.object({
-  name: Joi.string().alphanum().min(2).max(30),
+  username: Joi.string().alphanum().min(2).max(30),
   email: Joi.string()
     .email({
       minDomainSegments: 2,
